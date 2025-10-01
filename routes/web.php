@@ -14,3 +14,4 @@ Route::get('/customers/data', [CustomerController::class, 'getData']);
 
 Route::get('/orders', [OrderController::class, 'index']);
 Route::post('/orders', [OrderController::class, 'store']);
+Route::get('/orders/list', [OrderController::class, 'list'])->name('orders.list');

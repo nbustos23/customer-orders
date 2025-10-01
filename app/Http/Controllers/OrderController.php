@@ -23,4 +23,10 @@ class OrderController extends Controller {
         Order::create($request->all());
         return response()->json(['success' => 'Order added successfully!']);
     }
+
+    public function list() {
+        $orders = Order::with('customer')->get();
+        return view('orders.list', compact('orders'));
+    }
+
 }
